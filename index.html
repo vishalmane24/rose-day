@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rose Day Surprise 🌹</title>
+  < style >
+    body {
+      background: #0f0f0f;
+      color: white;
+      font-family: monospace;
+      text-align: center;
+      padding-top: 50px;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+    }
+    button {
+      background: crimson;
+      color: white;
+      cursor: pointer;
+    }
+  </ style >
+</head>
+
+<body>
+
+<h2>🌹 Rose Day Scanner 🌹</h2>
+<p>Enter your name to continue</p>
+
+<input id="name" placeholder="Type your name ❤️" />
+<br>
+<button onclick="scan()">Scan</button>
+
+<p id="result"></p>
+
+<script>
+function scan() {
+  let name = document.getElementById("name").value;
+  if(name === "") {
+    alert("Please enter your name ❤️");
+    return;
+  }
+
+  document.getElementById("result").innerHTML = `
+    <br>Scan Complete ✅<br><br>
+    Hello <b>${name}</b> ❤️<br><br>
+    Choose one option:<br><br>
+    <button onclick="reply('Forever')">Forever ♾️</button>
+    <button onclick="reply('Always')">Always 💖</button>
+    <button onclick="reply('Us')">Us 🫶</button>
+  `;
+}
+
+function reply(choice) {
+  document.getElementById("result").innerHTML = `
+    <br>You chose <b>${choice}</b> ❤️<br><br>
+    <h3>Happy Rose Day 🌹</h3>
+    <p>Sometimes it’s not about the rose,<br>
+    it’s about choosing each other — always.</p>
+  `;
+}
+</script>
+
+</body>
+</html>
